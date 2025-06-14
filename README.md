@@ -46,8 +46,6 @@ q: exit file viewer
 
 :w is normally saved but the placeholder
 
-:wq! save and quit exits the rc
-
 :cd [path] change directory
 
 esc: exit command/last mode
