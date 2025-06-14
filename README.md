@@ -40,11 +40,13 @@ v: jump to bottom file
 q: exit file viewer
 
 # command/last mode
-:q! quit
+:q quit
 
 :q! force quit
 
 :w is normally saved but the placeholder
+
+:wq save and quit
 
 :cd [path] change directory
 
