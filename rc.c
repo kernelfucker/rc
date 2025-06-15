@@ -358,9 +358,9 @@ void list_files(){
 		for(int l = i+1; l < filecn; l++){
 			if(strcasecmp(files[i], files[l]) > 0){
 				char t[maxp];
-				strcpy(t, files[i]);
-				strcpy(files[i], files[l]);
-				strcpy(files[l], t);
+				snprintf(t, sizeof(t), "%s", files[i]);
+				snprintf(files[i], sizeof(files[i]), "%s", files[l]);
+				snprintf(files[l], sizeof(files[l]), "%s", t);
 			}
 		}
 	}
