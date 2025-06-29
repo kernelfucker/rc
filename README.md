@@ -8,7 +8,7 @@ $ clang rc.c -o rc
 $ ./rc
 
 # keys
-h: move up to parent directory, like ```cd ..```
+h: move up to parent directory, like **cd ..**
 
 j: move cursor down
 
