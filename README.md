@@ -2,7 +2,7 @@
 vim-style cli file manager
 
 # compile
-$ clang rc.c -o rc
+$ clang rc.c -o rc -Os -s
 
 # usage
 $ ./rc
