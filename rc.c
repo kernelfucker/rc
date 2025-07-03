@@ -15,6 +15,8 @@
 #define maxf 1024
 #define maxl 1024
 
+#define version "0.2"
+
 const int so = STDOUT_FILENO;
 const int si = STDIN_FILENO;
 
@@ -401,20 +403,48 @@ void draw_interface(){
 	}
 }
 
+void help(const char *rc){
+	printf("usage: %s [options]..\n", rc);
+	printf("options:\n");
+	printf("  -h	display this\n");
+	printf("  -v	show version information\n");
+	exit(1);
+}
+
+void show_version(){
+	printf("rc-%s\n", version);
+	exit(1);
+}
+
 int main(int argc, char **argv){
 	init_term();
 	atexit(reset_term);
 	if(argc > 1){
-		change_directory(argv[1]);
-	} else {
-		getcwd(cwd, maxp);
-		list_files();
-	}
+		if(strcmp(argv[1], "-h") == 0){
+			reset_term();
+			help(argv[0]);
 
-	while(1){
-		draw_interface();
-		handle_input();
-	}
+			return 0;
+		}
 
-	return 0;
+		else if(strcmp(argv[1], "-v") == 0){
+			reset_term();
+			show_version();
+
+			return 0;
+		} else {
+			change_directory(argv[1]);
+		}
+
+		} else {
+			getcwd(cwd, maxp);
+			list_files();
+		}
+
+		while(1){
+			draw_interface();
+			handle_input();
+		}
+
+		return 0;
 }
