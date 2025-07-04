@@ -406,8 +406,8 @@ void draw_interface(){
 void help(const char *rc){
 	printf("usage: %s [options]..\n", rc);
 	printf("options:\n");
-	printf("  -h	display this\n");
 	printf("  -v	show version information\n");
+	printf("  -h	display this\n");
 	exit(1);
 }
 
